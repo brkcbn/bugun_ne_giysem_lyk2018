@@ -12,7 +12,7 @@ class NeGiysem():
     coordinates=""
     
     def __init__(self):
-       pass
+        pass
        
     #get coordinates
     def get_coordinates(coordinates_api_key):
@@ -44,6 +44,9 @@ class NeGiysem():
 
     
 app = NeGiysem()
-the_weather=app.get_weather_forecast()
-app.get_coordinates()
+coordinates = app.get_coordinates(self.coordinates_api_key)
+print(coordinates)
+
+
+
 #suggestions=app.get_suggestions(degrees,precipitation)

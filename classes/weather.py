@@ -15,9 +15,12 @@ class Weather():
         data = requests.get("https://api.openweathermap.org/data/2.5/weather?q={city},tr&appid={key}".format(city=city_name,key=self.api_key))
         #parse json
         data=data.json()
-        
-        return data 
-    
+        self.return_temp_and_main(data)
+        #return data
+    def return_temp_and_main(self,data):
+        print()
+
+
     def get_forecast_by_coordinates(self,coordinates):
        #self.coordinates=coordinates
         latitude=coordinates.get("latitude")

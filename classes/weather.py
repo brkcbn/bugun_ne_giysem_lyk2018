@@ -1,4 +1,5 @@
 import json
+import requests
 
 class Weather():
     coordinates=""
@@ -10,32 +11,26 @@ class Weather():
     
 
     def get_forecast_by_name(self,city_name):
-        data=self.get_data([self.city_name,""])
+        #get data from API with city name
+        data = requests.get("https://api.openweathermap.org/data/2.5/weather?q={city},tr&appid={key}".format(city=city_name,key=self.api_key))
+        #parse json
+        data=data.json()
+        
         return data 
     
     def get_forecast_by_coordinates(self,coordinates):
-        print("coordinate")
-        self.coordinates=coordinates
-        data=self.get_data(["",coordinates])
+       #self.coordinates=coordinates
+        latitude=coordinates.get("latitude")
+        longitude = coordinates.get("longitude")
+        data = requests.get("https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&appid={key}".format(lat=latitude,long=longitude,key=self.api_key))
+        data=data.json()
         return data
         
     
-    def get_data(self,*args):
-        city=args[0]
-        coordinates=args[1]
-        data=""
-        if city:
-            data = requests.get("https://api.openweathermap.org/data/2.5/weather?q={city},tr&appid={key}").format(city=city,key=self.api_key)
-        elif coordinates:
-            #by coordinates
-            data = requests.get("https://api.openweathermap.org/data/2.5/weather?q={city},tr&appid={key}").format(city=city,key=self.api_key)
-            
-       
-        return data
     
     
-    
-    
-        
+weather = Weather("92bb6add0822613f2ca9dd20116528a8")    
+city_data=weather.get_forecast_by_coordinates({'latitude': 40.6344, 'longitude': 31.6725})
+print(city_data)
         
     

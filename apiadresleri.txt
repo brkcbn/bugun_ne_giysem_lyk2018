@@ -1,6 +1,6 @@
 #api tanımları hava durumu, koordinata göre
 api.openweathermap.org/data/2.5/weather?lat={"latitude"}&lon={"longititude"}&appid=92bb6add0822613f2ca9dd20116528a8
 #api tanımları, şehir ismine göre hava durumu veriyor
-https://api.openweathermap.org/data/2.5/weather?q={"şehiradı"},tr&appid=92bb6add0822613f2ca9dd20116528a8
+https://api.openweathermap.org/data/2.5/weather?q={"city_name"},tr&appid=92bb6add0822613f2ca9dd20116528a8
 #api tanımları, ip adresine göre koordinat veriyor
-http://api.ipstack.com/{"ip_adresi"}?access_key=a5966744b2c34ab0d19f2cf74c440dd6
+http://api.ipstack.com/{"ip_address"}?access_key=a5966744b2c34ab0d19f2cf74c440dd6

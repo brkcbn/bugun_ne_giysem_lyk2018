@@ -11,19 +11,32 @@ class NeGiysem():
     
     def __init__(self):
        print("test")
+    
+    
        
     #get coordinates
+    def get_coordinates(coordinates_api_key):
+        coordinates =Coordinates()
+        if coordinates:
+            return coordinates
+        else:
+            #get city
+            self.get_city_name()
+        
     
-        #get city
+    #ask city name
+    def get_city_name(self):
+        city=input("Please enter the city name for weather forecast")
+        return city
     
     #get weather forecast
-       
-       
-#test coordinates
-coordinate= Coordinates()
+    def get_weather_forecast():
+        weather = Weather()
+        pass
 
-#test weather class
-weather = Weather()
-print(weather.get_forecast_by_name("Bolu"))
+    def get_suggestions():
+        pass
+
+
     
     

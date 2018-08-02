@@ -22,6 +22,7 @@ class Weather():
        #self.coordinates=coordinates
         latitude=coordinates.get("latitude")
         longitude = coordinates.get("longitude")
+       
         data = requests.get("https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&appid={key}".format(lat=latitude,long=longitude,key=self.api_key))
         data=data.json()
         return data
@@ -29,8 +30,8 @@ class Weather():
     
     
     
-weather = Weather("92bb6add0822613f2ca9dd20116528a8")    
-city_data=weather.get_forecast_by_coordinates({'latitude': 40.6344, 'longitude': 31.6725})
-print(city_data)
-        
+##weather = Weather("92bb6add0822613f2ca9dd20116528a8")    
+##city_data=weather.get_forecast_by_coordinates({'latitude': 40.6344, 'longitude': 31.6725})
+##print(city_data)
+##        
     

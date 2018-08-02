@@ -15,13 +15,14 @@ class NeGiysem():
         pass
        
     #get coordinates
-    def get_coordinates(coordinates_api_key):
+    def get_coordinates(self,coordinates_api_key):
         coordinates =Coordinates(coordinates_api_key)
+        coordinates = coordinates.give_my_coordinates()
         if coordinates:
-           coordinates.give_my_coordinates()
+           return coordinates
         else:
-            return False
-        return False
+           get_city_name()
+    
     
     #ask city name
     def get_city_name(self):
@@ -30,12 +31,14 @@ class NeGiysem():
       
     
     #get weather forecast
-    def get_weather_forecast(self):
+    def get_weather_forecast(self,coordinates=None):
         weather = Weather(self.weather_api_key)
-        if self.city:
-            weather.get_forecast_by_name(self.city)
+        self.coordinates=coordinates
+        if self.coordinates:
+            return weather.get_forecast_by_coordinates(self.coordinates)
         else:
-            weather.get_forecast_by_coordinates(self.coordinates)
+            return weather.get_forecast_by_name(self.city)
+           
         
 
     def get_suggestions(self,degrees,precipitation):
@@ -44,9 +47,16 @@ class NeGiysem():
 
     
 app = NeGiysem()
-coordinates = app.get_coordinates(self.coordinates_api_key)
-print(coordinates)
+#get coordinates
+coordinates = app.get_coordinates(app.coordinates_api_key)
 
+#get weather forecast
+data=app.get_weather_forecast(coordinates)
+suggestion = Suggestions("Extreme","-5")
+#get weather main
+print(suggestion.create())
 
+#get temp
+#minus 273.15
+#get suggestions
 
-#suggestions=app.get_suggestions(degrees,precipitation)

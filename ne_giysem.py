@@ -54,7 +54,7 @@ coordinates = app.get_coordinates(app.coordinates_api_key)
 data=app.get_weather_forecast(coordinates)
 suggestion = Suggestions("Extreme","-5")
 #get weather main
-print(suggestion.create())
+suggestion.create()
 
 #get temp
 #minus 273.15

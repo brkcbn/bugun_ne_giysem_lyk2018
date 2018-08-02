@@ -1,16 +1,1 @@
-import logging
-import requests
-import json
-#critical -> sadece exception
-#FORMAT = '[%(asctime)%] [%(name)%] [%(levelname)%]  %(message)%'
-#logging.basicConfig(filename="/home/eda/hata.log",format = FORMAT,level = logging.INFO)
-#logging.warning("Dikkat")
-#logging.info("Bilgi veriyorum")
-#logging.critical("test")
-
-
-
-send_url = 'http://freegeoip.net/json'
-r = requests.get(send_url)
-j = json.loads(r.text)
-print(j)
+requests

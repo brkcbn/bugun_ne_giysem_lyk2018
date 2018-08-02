@@ -46,6 +46,7 @@ class NeGiysem():
     
 app = NeGiysem()
 the_weather=app.get_weather_forecast()
+print(thee_weather)
 #get precipitation
 #get degrees
-suggestions=app.get_suggestions(degrees,precipitation)
+#suggestions=app.get_suggestions(degrees,precipitation)

@@ -2,7 +2,7 @@
 This Program Makes Suggestions About What To Wear Considering Your Location
 
 -At first, our program takes your ip adress and tries to identify your current location
--Based on your location, weather conditions of your location will be gathered from an API
+<br>Based on your location, weather conditions of your location will be gathered from an API
 -Finally, our suggestions class will bring the perfect outfit for weather and for you
 
 coordinates.py --> finds ip adress and brings coordinates of your location

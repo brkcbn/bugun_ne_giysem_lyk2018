@@ -8,35 +8,44 @@ from classes.suggestions import Suggestions
 class NeGiysem():
     weather_api_key="92bb6add0822613f2ca9dd20116528a8"
     coordinates_api_key="a5966744b2c34ab0d19f2cf74c440dd6"
+    city=""
+    coordinates=""
     
     def __init__(self):
-       print("test")
-    
-    
+       pass
        
     #get coordinates
     def get_coordinates(coordinates_api_key):
         coordinates =Coordinates()
         if coordinates:
-            return coordinates
+           self.coordinates=coordinates
+           self.coordinates 
         else:
-            #get city
-            self.get_city_name()
-        
+            return False
+        return False
     
     #ask city name
     def get_city_name(self):
         city=input("Please enter the city name for weather forecast")
-        return city
+        self.city=city
+      
     
     #get weather forecast
-    def get_weather_forecast():
-        weather = Weather()
-        pass
+    def get_weather_forecast(self):
+        weather = Weather(self.weather_api_key)
+        if self.city:
+            weather.get_forecast_by_name(self.city)
+        else:
+            weather.get_forecast_by_coordinates(self.coordinates)
+        
 
-    def get_suggestions():
-        pass
-
+    def get_suggestions(self,degrees,precipitation):
+        suggestions = Suggestions(degrees,precipitation)
+        return suggestions
 
     
-    
+app = NeGiysem()
+the_weather=app.get_weather_forecast()
+#get precipitation
+#get degrees
+suggestions=app.get_suggestions(degrees,precipitation)

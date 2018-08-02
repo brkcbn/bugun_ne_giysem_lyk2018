@@ -16,10 +16,9 @@ class NeGiysem():
        
     #get coordinates
     def get_coordinates(coordinates_api_key):
-        coordinates =Coordinates()
+        coordinates =Coordinates(coordinates_api_key)
         if coordinates:
-           self.coordinates=coordinates
-           self.coordinates 
+           coordinates.give_my_coordinates()
         else:
             return False
         return False
@@ -46,6 +45,5 @@ class NeGiysem():
     
 app = NeGiysem()
 the_weather=app.get_weather_forecast()
-#get precipitation
-#get degrees
-suggestions=app.get_suggestions(degrees,precipitation)
+app.get_coordinates()
+#suggestions=app.get_suggestions(degrees,precipitation)

@@ -1,5 +1,4 @@
 import logging
-import socket
 from classes.coordinates import Coordinates
 from classes.weather import Weather
 from classes.suggestions import Suggestions
@@ -52,7 +51,7 @@ coordinates = app.get_coordinates(app.coordinates_api_key)
 
 #get weather forecast
 data=app.get_weather_forecast(coordinates)
-suggestion = Suggestions("Extreme","-5")
+suggestion = Suggestions("Cloudy","-5")
 #get weather main
 suggestion.create()
 

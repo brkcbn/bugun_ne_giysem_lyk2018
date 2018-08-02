@@ -23,7 +23,8 @@ class Suggestions():
 
             elif self.precipitation == "Rain":
                 print("Wear your {}, do not forget to take an {}.".format(*clothe_rain))
-
+            else:
+                pass
 
         else:
             print("There is no precipitation")
